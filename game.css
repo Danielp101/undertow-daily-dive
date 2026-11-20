@@ -67,3 +67,5 @@
   .dive-input-row { gap: 6px; }
   #dive-input { padding: 11px; }
 }
+
+.dive-ocean{position:relative;margin:0 0 18px;border:1px solid #42616f;border-radius:9px;overflow:hidden;background:#123643}.dive-ocean canvas{width:100%;height:clamp(95px,17vh,150px);display:block;image-rendering:pixelated}.ocean-counter{position:absolute;bottom:8px;left:12px;color:#ddfff1;font:600 14px ui-monospace,monospace;font-variant-numeric:tabular-nums;text-shadow:0 1px 3px #061821}.dive-score{font-variant-numeric:tabular-nums}.rarity-reveal{animation:surface-in .42s ease-out both}@keyframes surface-in{from{opacity:.2;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}@media(prefers-reduced-motion:reduce){.rarity-reveal{animation:none}}

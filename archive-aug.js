@@ -1,6 +1,6 @@
 window.BANK = (window.BANK || []).concat([
   {
-    prompt: "Which country has an English name beginning with L?",
+    prompt: "Name a country that starts with the letter L",
     category: "Geography",
     date: "2026-08-18",
     source: "https://krilliongame.net/archive/2026-08-18/",
@@ -17,7 +17,7 @@ window.BANK = (window.BANK || []).concat([
     ]
   },
   {
-    prompt: "Which island lies in the Mediterranean Sea?",
+    prompt: "Name an island in the Mediterranean",
     category: "Islands",
     date: "2026-08-18",
     source: "https://krilliongame.net/archive/2026-08-18/",
@@ -159,7 +159,7 @@ window.BANK = (window.BANK || []).concat([
     ]
   },
   {
-    prompt: "Which animal goes into hibernation?",
+    prompt: "Name an animal that hibernates",
     category: "Wildlife",
     date: "2026-08-18",
     source: "https://krilliongame.net/archive/2026-08-18/",
@@ -201,7 +201,7 @@ window.BANK = (window.BANK || []).concat([
     ]
   },
   {
-    prompt: "What dish comes from Thai or Vietnamese cuisine?",
+    prompt: "Name a Thai or Vietnamese dish",
     category: "Food",
     date: "2026-08-18",
     source: "https://krilliongame.net/archive/2026-08-18/",
@@ -296,7 +296,7 @@ window.BANK = (window.BANK || []).concat([
     ]
   },
   {
-    prompt: "Which character appears in a Pixar movie?",
+    prompt: "Name a Pixar character",
     category: "Pixar",
     date: "2026-08-18",
     source: "https://krilliongame.net/archive/2026-08-18/",
@@ -566,7 +566,7 @@ window.BANK = (window.BANK || []).concat([
     ]
   },
   {
-    prompt: "Which planet or dwarf planet belongs to our solar system?",
+    prompt: "Name a planet or dwarf planet in our solar system",
     category: "Space",
     date: "2026-08-18",
     source: "https://krilliongame.net/archive/2026-08-18/",
@@ -591,7 +591,7 @@ window.BANK = (window.BANK || []).concat([
     ]
   },
   {
-    prompt: "What is one way of styling hair?",
+    prompt: "Name a hairstyle",
     category: "Hairstyles",
     date: "2026-08-18",
     source: "https://krilliongame.net/archive/2026-08-18/",

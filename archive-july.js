@@ -3,7 +3,7 @@ window.BANK = (window.BANK || []).concat([
     date: "2026-07-16",
     source: "https://krilliongame.net/archive/2026-07-16/",
     category: "Wildlife",
-    prompt: "Which animal has an English name beginning with K?",
+    prompt: "Name an animal whose name starts with K",
     answers: [
       ["Kouprey",100],
       ["Kagu",85],
@@ -50,7 +50,7 @@ window.BANK = (window.BANK || []).concat([
     date: "2026-07-16",
     source: "https://krilliongame.net/archive/2026-07-16/",
     category: "Geography",
-    prompt: "Which country would you find on a map of Africa?",
+    prompt: "Name a country in Africa",
     answers: [
       ["São Tomé and Príncipe",100],
       ["Burundi",85],
@@ -112,7 +112,7 @@ window.BANK = (window.BANK || []).concat([
     date: "2026-07-16",
     source: "https://krilliongame.net/archive/2026-07-16/",
     category: "Food",
-    prompt: "Give the name of a pasta shape.",
+    prompt: "Name a pasta shape",
     answers: [
       ["Su filindeu",100],
       ["Acini di pepe",85],
@@ -177,7 +177,7 @@ window.BANK = (window.BANK || []).concat([
     date: "2026-07-16",
     source: "https://krilliongame.net/archive/2026-07-16/",
     category: "Movies",
-    prompt: "Which feature-length film did Pixar make?",
+    prompt: "Name a Pixar feature film",
     answers: [
       ["Elio",100],
       ["Cars 3",85],
@@ -216,7 +216,7 @@ window.BANK = (window.BANK || []).concat([
     date: "2026-07-16",
     source: "https://krilliongame.net/archive/2026-07-16/",
     category: "Chemistry",
-    prompt: "Which element has an English name ending in “ium”?",
+    prompt: "Name a chemical element whose name ends in \"-ium\"",
     answers: [
       ["Dysprosium",100],
       ["Actinium",85],
@@ -303,7 +303,7 @@ window.BANK = (window.BANK || []).concat([
     date: "2026-07-16",
     source: "https://krilliongame.net/archive/2026-07-16/",
     category: "Sport",
-    prompt: "Identify a sport included in the Summer Olympic Games, past or present.",
+    prompt: "Name a sport that has ever been part of the Summer Olympics",
     answers: [
       ["Basque pelota",100],
       ["Cricket",85],
@@ -364,7 +364,7 @@ window.BANK = (window.BANK || []).concat([
     date: "2026-07-16",
     source: "https://krilliongame.net/archive/2026-07-16/",
     category: "Music",
-    prompt: "Which instrument might you hear in a symphony orchestra?",
+    prompt: "Name an instrument found in a symphony orchestra",
     answers: [
       ["Wagner tuba",100],
       ["Alto flute",85],

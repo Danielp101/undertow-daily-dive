@@ -17,6 +17,19 @@
     month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC'
   });
   let run = null;
+  let cancelDescent = () => {};
+  function depthScene(from, to, points) {
+    const canvas = game().querySelector('.dive-ocean canvas');
+    const counter = game().querySelector('.ocean-counter');
+    const scoreText = game().querySelector('.score-count');
+    const colour = tiers.find(t => t.points === points)?.color || '#abbfc8';
+    if (!canvas) return;
+    cancelDescent = window.renderDescent(canvas, from, to, points, colour, (depth, progress) => {
+      counter.textContent = depth.toLocaleString() + ' m';
+      if (scoreText) scoreText.textContent = '+' + Math.round(points * progress);
+    });
+  }
+  const ocean = '<div class="dive-ocean" aria-hidden="true"><canvas></canvas><span class="ocean-counter"></span></div>';
   let clock;
   let deadline;
   let previousSecond;
@@ -53,6 +66,7 @@
 
   function stop() {
     clearInterval(clock);
+    cancelDescent();
     run = null;
   }
 
@@ -66,6 +80,7 @@
   function tier(points) { return tiers.find(row => points === row.points)?.name || 'Miss'; }
 
   function frame(contents, position) {
+    cancelDescent();
     const parts = run.questions.map((_, i) => {
       const state = i < run.results.length ? 'done' : i === position ? 'active' : '';
       return '<span class="' + state + '"></span>';
@@ -99,10 +114,11 @@
     const index = run.results.length;
     const q = round();
     frame('<div class="dive-card"><div class="dive-meta"><span>Question ' + (index + 1) + ' / ' + run.questions.length +
-      '</span><span>' + total() + ' pts</span></div><div class="dive-category">' + esc([q.category, formatDate(q.date)].filter(Boolean).join(' · ')) +
+      '</span><span>' + total() + ' pts</span></div>' + ocean + '<div class="dive-category">' + esc([q.category, formatDate(q.date)].filter(Boolean).join(' · ')) +
       '</div><h2 class="dive-title" tabindex="-1">' + esc(q.prompt) + '</h2>' +
       '<div class="dive-actions"><p class="dive-ready">Get ready <strong id="dive-seconds"></strong></p></div></div>', index);
     focusHeading();
+    depthScene(total()*10,total()*10,0);
     everySecond(PREVIEW_SECONDS, seconds => { game().querySelector('#dive-seconds').textContent = seconds; }, openInput);
   }
 
@@ -145,11 +161,12 @@
     const source = q.source && /^https:\/\//.test(q.source) ? '<p class="archive-source"><a target="_blank" rel="noopener noreferrer" href="' + esc(q.source) + '">Archived answer sheet</a></p>' : '';
     const last = run.results.length === run.questions.length;
     frame('<div class="dive-card"><div class="dive-meta"><span>Question ' + run.results.length + ' / ' + run.questions.length +
-      '</span><span>' + total() + ' pts · ' + (total() * 10).toLocaleString() + ' m</span></div><div class="dive-category">' + reason +
-      '</div><h2 class="dive-title" tabindex="-1">' + esc(answer || 'No answer') + '</h2><div class="dive-score">+' + score +
+      '</span><span>' + total() + ' pts · ' + (total() * 10).toLocaleString() + ' m</span></div>' + ocean + '<div class="dive-category rarity-reveal">' + reason +
+      '</div><h2 class="dive-title" tabindex="-1">' + esc(answer || 'No answer') + '</h2><div class="dive-score"><span class="score-count">+' + score + '</span>' +
       ' <small>pts</small></div>' + sub + '<button class="dive-primary dive-next" type="button">' +
       (last ? 'See dive results' : 'Next question') + '</button>' + source + '</div>', -1);
     focusHeading();
+    depthScene((total()-score)*10,total()*10,score);
     game().querySelector('.dive-next').onclick = last ? summary : question;
   }
 
